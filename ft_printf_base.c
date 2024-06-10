@@ -17,12 +17,12 @@ size_t	ft_putchar(char c)
 	return (write(1, &c, 1));
 }
 
-size_t	ft_strlen(char *base)
+size_t	ft_strlen(char *str)
 {
 	size_t	i;
 
 	i = 0;
-	while (base[i] != '\0')
+	while (str[i] != '\0')
 	{
 		i++;
 	}
