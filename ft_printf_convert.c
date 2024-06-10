@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_convert.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtian <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/10 18:24:33 by mtian             #+#    #+#             */
+/*   Updated: 2024/06/10 18:27:00 by mtian            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_condition(char *base)
@@ -44,7 +56,7 @@ void	ft_putnbr_base(unsigned long long l, char *base, size_t *count)
 	*count = *count + 1;
 }
 
-void	ft_putnbr(int	nb, size_t *count)
+void	ft_putnbr(int nb, size_t *count)
 {
 	long	l;
 
@@ -53,23 +65,22 @@ void	ft_putnbr(int	nb, size_t *count)
 	{
 		l = -l;
 		ft_putchar('-');
-        *count = *count + 1;
+		*count = *count + 1;
 	}
 	if (l % 10 != l)
 	{
 		ft_putnbr(l / 10, count);
 	}
 	ft_putchar(l % 10 + '0');
-    *count = *count + 1;
+	*count = *count + 1;
 }
 
-void	ft_putnbr_unsigned_int(unsigned int	l, size_t *count)
+void	ft_putnbr_unsigned_int(unsigned int l, size_t *count)
 {
 	if (l % 10 != l)
 	{
 		ft_putnbr(l / 10, count);
 	}
 	ft_putchar(l % 10 + '0');
-    *count = *count + 1;
+	*count = *count + 1;
 }
-
